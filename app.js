@@ -1,4 +1,17 @@
 const STORAGE_KEY = 'upper-lower-tracker-v2';
+let IMAGE_MAP = {};
+
+// Load automatic image map generated from the PDF (if present)
+fetch('/images/images_map.json')
+  .then((r) => r.json())
+  .then((m) => {
+    IMAGE_MAP = m || {};
+    // re-render in case map provides images for items with empty image field
+    renderWorkouts();
+  })
+  .catch(() => {
+    IMAGE_MAP = {};
+  });
 
 const initialWorkouts = [
   {
@@ -154,8 +167,9 @@ function renderWorkouts() {
         .map((exercise, exerciseIndex) => {
           const completedClass = exercise.completed ? 'completed' : '';
           const activeClass = workout.started ? 'active' : '';
-          const mediaMarkup = exercise.image
-            ? `<img src="${exercise.image}" class="exercise-image" alt="${exercise.name}" />`
+          const resolvedImage = exercise.image || IMAGE_MAP[exercise.name] || '';
+          const mediaMarkup = resolvedImage
+            ? `<img src="${resolvedImage}" class="exercise-image" alt="${exercise.name}" />`
             : `<svg class="exercise-image placeholder" viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                  <rect width="64" height="48" rx="6" fill="#0e1b2f" />
                  <g fill="#67a4ff" opacity="0.12"><rect x="6" y="8" width="52" height="32" rx="4"/></g>
