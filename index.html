@@ -20,7 +20,10 @@
             Start each workout, check off exercises as you go, log the weight you used, and keep everything saved in this browser.
           </p>
         </div>
-        <button id="resetButton" class="secondary-button">Reset progress</button>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button id="manageImagesButton" class="secondary-button">Manage Images</button>
+          <button id="resetButton" class="secondary-button">Reset progress</button>
+        </div>
       </header>
 
       <section class="summary-card" aria-label="Workout summary">
@@ -39,6 +42,16 @@
       </section>
 
       <main id="workoutList" class="workout-list"></main>
+      <aside id="manageImagesPanel" class="manage-panel" hidden>
+        <div class="manage-header">
+          <h3>Manage Exercise Images</h3>
+          <div>
+            <button id="resetImagesButton" class="secondary-button">Reset to defaults</button>
+            <button id="closeManageButton" class="secondary-button">Close</button>
+          </div>
+        </div>
+        <div id="manageImagesContent"></div>
+      </aside>
     </div>
 
     <script src="/app.js"></script>

@@ -1,5 +1,21 @@
 const STORAGE_KEY = 'upper-lower-tracker-v2';
 let IMAGE_MAP = {};
+const IMAGE_OVERRIDES_KEY = STORAGE_KEY + '-image-overrides';
+let IMAGE_OVERRIDES = {};
+
+function loadImageOverrides() {
+  try {
+    IMAGE_OVERRIDES = JSON.parse(localStorage.getItem(IMAGE_OVERRIDES_KEY) || '{}');
+  } catch (e) {
+    IMAGE_OVERRIDES = {};
+  }
+}
+
+function saveImageOverrides() {
+  localStorage.setItem(IMAGE_OVERRIDES_KEY, JSON.stringify(IMAGE_OVERRIDES));
+}
+
+loadImageOverrides();
 
 // Load automatic image map generated from the PDF (if present)
 fetch('/images/images_map.json')
@@ -168,7 +184,7 @@ function renderWorkouts() {
           const completedClass = exercise.completed ? 'completed' : '';
           const activeClass = workout.started ? 'active' : '';
           // Resolve images: explicit exercise.image preferred, otherwise IMAGE_MAP can be an array or single string
-          const mapped = IMAGE_MAP[exercise.name];
+          const mapped = (exercise.name in IMAGE_OVERRIDES) ? IMAGE_OVERRIDES[exercise.name] : IMAGE_MAP[exercise.name];
           const resolvedImages = [];
           if (exercise.image) resolvedImages.push(exercise.image);
           if (Array.isArray(mapped)) resolvedImages.push(...mapped);
@@ -371,6 +387,61 @@ workoutList.addEventListener('click', (event) => {
     renderSummary();
     renderWorkouts();
   }
+});
+
+// Manage images panel behavior
+const manageBtn = document.getElementById('manageImagesButton');
+const managePanel = document.getElementById('manageImagesPanel');
+const manageContent = document.getElementById('manageImagesContent');
+const closeManageButton = document.getElementById('closeManageButton');
+const resetImagesButton = document.getElementById('resetImagesButton');
+
+function renderManagePanel() {
+  const exercises = state.workouts.flatMap(w => w.exercises.map(e => e.name));
+  loadImageOverrides();
+  manageContent.innerHTML = exercises.map((name) => {
+    const mapped = (name in IMAGE_OVERRIDES) ? IMAGE_OVERRIDES[name] : (IMAGE_MAP[name] || []);
+    const imgs = Array.isArray(mapped) ? mapped : (mapped ? [mapped] : []);
+    const thumbs = imgs.length ? imgs.map(img => `
+      <div class="thumb-wrap">
+        <img src="${img}" class="thumb" alt="${name}" />
+        <button data-exercise="${name}" data-img="${img}" class="secondary-button remove-image">Remove</button>
+      </div>
+    `).join('') : '<span class="muted">No images</span>';
+    return `<div class="manage-row"><div class="label">${name}</div><div class="thumb-row">${thumbs}</div></div>`;
+  }).join('');
+}
+
+manageContent.addEventListener('click', (e) => {
+  const btn = e.target.closest('.remove-image');
+  if (!btn) return;
+  const ex = btn.dataset.exercise;
+  const img = btn.dataset.img;
+  loadImageOverrides();
+  const current = (ex in IMAGE_OVERRIDES) ? (IMAGE_OVERRIDES[ex] || []) : (IMAGE_MAP[ex] || []);
+  const arr = Array.isArray(current) ? current.slice() : (current ? [current] : []);
+  const updated = arr.filter(i => i !== img);
+  IMAGE_OVERRIDES[ex] = updated;
+  saveImageOverrides();
+  renderManagePanel();
+  renderWorkouts();
+});
+
+manageBtn.addEventListener('click', () => {
+  managePanel.hidden = false;
+  renderManagePanel();
+});
+
+closeManageButton.addEventListener('click', () => {
+  managePanel.hidden = true;
+});
+
+resetImagesButton.addEventListener('click', () => {
+  if (!confirm('Reset image overrides to defaults for all exercises?')) return;
+  IMAGE_OVERRIDES = {};
+  saveImageOverrides();
+  renderManagePanel();
+  renderWorkouts();
 });
 
 resetButton.addEventListener('click', () => {
