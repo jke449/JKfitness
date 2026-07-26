@@ -236,7 +236,7 @@ function renderWorkouts() {
               </button>
             </div>
           </div>
-          <p class="helper-text">Use this section to start the workout, mark exercises as you complete them, and save the weight and reps used for each movement.</p>
+          <p class="helper-text"><strong>Tip:</strong> Start the workout, complete the exercises as you go, and enter the weight and reps you used. Your progress is saved automatically in this browser.</p>
           <div class="exercise-list">${exercisesMarkup}</div>
         </section>
       `;
