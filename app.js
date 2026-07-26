@@ -167,9 +167,22 @@ function renderWorkouts() {
         .map((exercise, exerciseIndex) => {
           const completedClass = exercise.completed ? 'completed' : '';
           const activeClass = workout.started ? 'active' : '';
-          const resolvedImage = exercise.image || IMAGE_MAP[exercise.name] || '';
-          const mediaMarkup = resolvedImage
-            ? `<img src="${resolvedImage}" class="exercise-image" alt="${exercise.name}" />`
+          // Resolve images: explicit exercise.image preferred, otherwise IMAGE_MAP can be an array or single string
+          const mapped = IMAGE_MAP[exercise.name];
+          const resolvedImages = [];
+          if (exercise.image) resolvedImages.push(exercise.image);
+          if (Array.isArray(mapped)) resolvedImages.push(...mapped);
+          else if (mapped) resolvedImages.push(mapped);
+
+          const mediaMarkup = resolvedImages.length
+            ? `
+              <div class="exercise-gallery" data-workout="${workoutIndex}" data-exercise="${exerciseIndex}">
+                <img src="${resolvedImages[0]}" class="exercise-image main" id="main-${workoutIndex}-${exerciseIndex}" alt="${exercise.name}" />
+                <div class="thumb-row">
+                  ${resolvedImages.map(img => `<img src="${img}" class="exercise-image thumb" data-img="${img}" data-workout="${workoutIndex}" data-exercise="${exerciseIndex}" alt="${exercise.name}" />`).join('')}
+                </div>
+              </div>
+            `
             : `<svg class="exercise-image placeholder" viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                  <rect width="64" height="48" rx="6" fill="#0e1b2f" />
                  <g fill="#67a4ff" opacity="0.12"><rect x="6" y="8" width="52" height="32" rx="4"/></g>
@@ -324,6 +337,15 @@ workoutList.addEventListener('change', (event) => {
 workoutList.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-action]');
   if (!button) {
+    // thumbnail click handler: swap main image
+    const thumb = event.target.closest('.exercise-image.thumb');
+    if (thumb) {
+      const workoutIndex = Number(thumb.dataset.workout);
+      const exerciseIndex = Number(thumb.dataset.exercise);
+      const img = thumb.dataset.img;
+      const main = document.getElementById(`main-${workoutIndex}-${exerciseIndex}`);
+      if (main) main.src = img;
+    }
     return;
   }
 

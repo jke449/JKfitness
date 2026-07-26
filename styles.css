@@ -207,6 +207,35 @@ h1 {
 
 .exercise-image.placeholder { display: block; }
 
+.exercise-gallery {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.exercise-image.main {
+  width: 128px;
+  height: 86px;
+  border-radius: 10px;
+}
+
+.thumb-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.exercise-image.thumb {
+  width: 56px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0.95;
+  border-radius: 6px;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.exercise-image.thumb:hover { transform: translateY(-3px); opacity: 1; }
+
 .checkbox-label {
   display: flex;
   align-items: center;

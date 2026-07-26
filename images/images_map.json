@@ -1,23 +1,105 @@
 {
-  "Low Incline Dumbbell Press": "/images/page1_Im0.png",
-  "Pull-Ups": "/images/page1_Im0.png",
-  "Dumbbell Lateral Raises": "/images/page1_Im0.png",
-  "Dumbbell Chest Supported Row": "/images/page1_Im0.png",
-  "Banded Push-Ups": "/images/page4_Im0.png",
-  "Barbell Back Squat": "/images/page1_Im0.png",
-  "Dumbbell Romanian Deadlift": "/images/page1_Im0.png",
-  "Seated Leg Extensions": "/images/page1_Im0.png",
-  "Standing Weighted Calf Raises": "/images/page1_Im0.png",
-  "Palloff Press": "/images/page1_Im0.png",
-  "Barbell Bench Press": "/images/page1_Im0.png",
-  "Seated Cable Row": "/images/page1_Im0.png",
-  "Standing Barbell Overhead Press": "/images/page1_Im0.png",
-  "Standing Mid-Chest Cable Fly": "/images/page1_Im0.png",
-  "Behind Body Cable Curls": "/images/page1_Im0.png",
-  "Standing Face Pulls": "/images/page1_Im0.png",
-  "Barbell Deadlift": "/images/page1_Im0.png",
-  "Front Foot Elevated Reverse Lunges": "/images/page1_Im0.png",
-  "Seated Leg Curls": "/images/page1_Im0.png",
-  "Seated Weighted Calf Raises": "/images/page1_Im0.png",
-  "Bird Dog": "/images/page1_Im0.png"
+  "Low Incline Dumbbell Press": [
+    "/images/page6_Im0.png",
+    "/images/page6_Im1.png",
+    "/images/page6_Im2.png",
+    "/images/page6_Im3.png",
+    "/images/page6_Im4.png"
+  ],
+  "Pull-Ups": [
+    "/images/page7_Im0.png",
+    "/images/page7_Im1.png",
+    "/images/page7_Im2.png",
+    "/images/page7_Im3.png",
+    "/images/page7_Im4.png"
+  ],
+  "Dumbbell Lateral Raises": [
+    "/images/page8_Im0.png",
+    "/images/page8_Im1.png",
+    "/images/page8_Im2.png",
+    "/images/page8_Im3.png"
+  ],
+  "Dumbbell Chest Supported Row": [
+    "/images/page9_Im0.png",
+    "/images/page9_Im1.png",
+    "/images/page9_Im2.png",
+    "/images/page9_Im3.png"
+  ],
+  "Banded Push-Ups": [
+    "/images/page10_Im0.png",
+    "/images/page10_Im1.png",
+    "/images/page10_Im2.png",
+    "/images/page10_Im3.png"
+  ],
+  "Barbell Back Squat": [],
+  "Dumbbell Romanian Deadlift": [],
+  "Seated Leg Extensions": [],
+  "Standing Weighted Calf Raises": [
+    "/images/page14_Im0.png",
+    "/images/page14_Im1.png",
+    "/images/page14_Im2.png",
+    "/images/page14_Im3.png"
+  ],
+  "Palloff Press": [
+    "/images/page15_Im0.png",
+    "/images/page15_Im1.png",
+    "/images/page15_Im2.png",
+    "/images/page15_Im3.png"
+  ],
+  "Barbell Bench Press": [
+    "/images/page16_Im0.png",
+    "/images/page16_Im1.png",
+    "/images/page16_Im2.png",
+    "/images/page16_Im3.png"
+  ],
+  "Seated Cable Row": [
+    "/images/page17_Im0.png",
+    "/images/page17_Im1.png",
+    "/images/page17_Im2.png",
+    "/images/page17_Im3.png"
+  ],
+  "Standing Barbell Overhead Press": [
+    "/images/page18_Im0.png",
+    "/images/page18_Im1.png",
+    "/images/page18_Im2.png",
+    "/images/page18_Im3.png"
+  ],
+  "Standing Mid-Chest Cable Fly": [],
+  "Behind Body Cable Curls": [],
+  "Standing Face Pulls": [
+    "/images/page21_Im0.png",
+    "/images/page21_Im1.png",
+    "/images/page21_Im2.png",
+    "/images/page21_Im3.png"
+  ],
+  "Barbell Deadlift": [
+    "/images/page22_Im0.png",
+    "/images/page22_Im1.png",
+    "/images/page22_Im2.png",
+    "/images/page22_Im3.png"
+  ],
+  "Front Foot Elevated Reverse Lunges": [
+    "/images/page23_Im0.png",
+    "/images/page23_Im1.png",
+    "/images/page23_Im2.png",
+    "/images/page23_Im3.png"
+  ],
+  "Seated Leg Curls": [
+    "/images/page24_Im0.png",
+    "/images/page24_Im1.png",
+    "/images/page24_Im2.png",
+    "/images/page24_Im3.png"
+  ],
+  "Seated Weighted Calf Raises": [
+    "/images/page25_Im0.png",
+    "/images/page25_Im1.png",
+    "/images/page25_Im2.png",
+    "/images/page25_Im3.png"
+  ],
+  "Bird Dog": [
+    "/images/page26_Im0.png",
+    "/images/page26_Im1.png",
+    "/images/page26_Im2.png",
+    "/images/page26_Im3.png"
+  ]
 }
