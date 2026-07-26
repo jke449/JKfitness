@@ -7,11 +7,11 @@ const initialWorkouts = [
     started: false,
     completed: false,
     exercises: [
-      { name: 'Low Incline Dumbbell Press', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Pull-Ups', targetSets: 3, reps: '6-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Dumbbell Lateral Raises', targetSets: 3, reps: '15-20', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Dumbbell Chest Supported Row', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Banded Push-Ups', targetSets: 3, reps: '10+', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' }
+        { name: 'Low Incline Dumbbell Press', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Pull-Ups', targetSets: 3, reps: '6-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Dumbbell Lateral Raises', targetSets: 3, reps: '15-20', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Dumbbell Chest Supported Row', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Banded Push-Ups', targetSets: 3, reps: '10+', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' }
     ]
   },
   {
@@ -20,11 +20,11 @@ const initialWorkouts = [
     started: false,
     completed: false,
     exercises: [
-      { name: 'Barbell Back Squat', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Dumbbell Romanian Deadlift', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Seated Leg Extensions', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Standing Weighted Calf Raises', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Palloff Press', targetSets: 2, reps: '5/side', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' }
+        { name: 'Barbell Back Squat', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Dumbbell Romanian Deadlift', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Seated Leg Extensions', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Standing Weighted Calf Raises', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Palloff Press', targetSets: 2, reps: '5/side', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' }
     ]
   },
   {
@@ -33,12 +33,12 @@ const initialWorkouts = [
     started: false,
     completed: false,
     exercises: [
-      { name: 'Barbell Bench Press', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Seated Cable Row', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Standing Barbell Overhead Press', targetSets: 3, reps: '6-8', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Standing Mid-Chest Cable Fly', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Behind Body Cable Curls', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Standing Face Pulls', targetSets: 3, reps: '10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' }
+        { name: 'Barbell Bench Press', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Seated Cable Row', targetSets: 3, reps: '8-10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Standing Barbell Overhead Press', targetSets: 3, reps: '6-8', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Standing Mid-Chest Cable Fly', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Behind Body Cable Curls', targetSets: 3, reps: '10-12', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Standing Face Pulls', targetSets: 3, reps: '10', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' }
     ]
   },
   {
@@ -47,11 +47,11 @@ const initialWorkouts = [
     started: false,
     completed: false,
     exercises: [
-      { name: 'Barbell Deadlift', targetSets: 3, reps: '6-8', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Front Foot Elevated Reverse Lunges', targetSets: 3, reps: '8-10/leg', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Seated Leg Curls', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Seated Weighted Calf Raises', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' },
-      { name: 'Bird Dog', targetSets: 2, reps: '5/side', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '' }
+        { name: 'Barbell Deadlift', targetSets: 3, reps: '6-8', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Front Foot Elevated Reverse Lunges', targetSets: 3, reps: '8-10/leg', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Seated Leg Curls', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Seated Weighted Calf Raises', targetSets: 3, reps: '10-15', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' },
+        { name: 'Bird Dog', targetSets: 2, reps: '5/side', completed: false, setsDone: 0, repsDone: '', weight: '', notes: '', image: '' }
     ]
   }
 ];
@@ -97,7 +97,8 @@ function loadState() {
             setsDone: Number(exercise.setsDone || 0),
             repsDone: exercise.repsDone ?? '',
             weight: exercise.weight ?? '',
-            notes: exercise.notes ?? ''
+            notes: exercise.notes ?? '',
+            image: exercise.image ?? fallbackExercise.image ?? ''
           };
         });
 
@@ -153,9 +154,18 @@ function renderWorkouts() {
         .map((exercise, exerciseIndex) => {
           const completedClass = exercise.completed ? 'completed' : '';
           const activeClass = workout.started ? 'active' : '';
+          const mediaMarkup = exercise.image
+            ? `<img src="${exercise.image}" class="exercise-image" alt="${exercise.name}" />`
+            : `<svg class="exercise-image placeholder" viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                 <rect width="64" height="48" rx="6" fill="#0e1b2f" />
+                 <g fill="#67a4ff" opacity="0.12"><rect x="6" y="8" width="52" height="32" rx="4"/></g>
+                 <circle cx="20" cy="20" r="6" fill="#67a4ff" opacity="0.18" />
+               </svg>`;
+
           return `
             <article class="exercise-card ${completedClass} ${activeClass}">
               <div class="exercise-top">
+                ${mediaMarkup}
                 <label class="checkbox-label">
                   <input
                     type="checkbox"

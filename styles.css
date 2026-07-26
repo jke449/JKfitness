@@ -195,6 +195,18 @@ h1 {
   gap: 12px;
 }
 
+.exercise-image {
+  width: 96px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+.exercise-image.placeholder { display: block; }
+
 .checkbox-label {
   display: flex;
   align-items: center;
