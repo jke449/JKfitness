@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'bws-upper-lower-tracker-v2';
+const STORAGE_KEY = 'upper-lower-tracker-v2';
 
 const initialWorkouts = [
   {
