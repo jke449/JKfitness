@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BWS Upper-Lower Tracker</title>
+    <meta
+      name="description"
+      content="Track your BWS upper-lower workouts and save progress in your browser."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Built With Science</p>
+          <h1>BWS 4-Day Upper-Lower Tracker</h1>
+          <p class="hero-copy">
+            Log each workout as you go and keep your progress saved right in this browser.
+          </p>
+        </div>
+        <button id="resetButton" class="secondary-button">Reset progress</button>
+      </header>
+
+      <section class="summary-card" aria-label="Workout summary">
+        <div>
+          <p class="summary-label">Completed exercises</p>
+          <p id="completedCount" class="summary-value">0 / 0</p>
+        </div>
+        <div>
+          <p class="summary-label">Workouts completed</p>
+          <p id="workoutCount" class="summary-value">0 / 4</p>
+        </div>
+        <div>
+          <p class="summary-label">Last saved</p>
+          <p id="lastSaved" class="summary-value">Not yet</p>
+        </div>
+      </section>
+
+      <main id="workoutList" class="workout-list"></main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

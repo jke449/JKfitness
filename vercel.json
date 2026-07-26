@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "bws-upper-lower-tracker",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
